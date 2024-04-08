@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aceita pourra?</title>
+<style>
+  body {
+    background-image: url("imagem/imagem.png");
+    color: white;
+    font-size: 40px;
+    /* outras propriedades de estilo, se necessário */
+  }
+</style>
+</head>
+<h1> Aceita Namorar Cmg?</h1>
+<body>
+
+<button onclick="playSound('audio/som1.mp3', 'agora me beija meu amor<3 ')">Sim</button>
+<button onclick="playSound('audio/som2.mp3', 'a ta, tudo bem ent...')">Não</button>
+
+<p id="mensagem"></p>
+
+<audio id="myAudio">
+  <source src="" id="audioSource" type="audio/mp3">
+  Seu navegador não suporta áudio HTML5.
+</audio>
+
+<script>
+function playSound(audioFile, message) {
+  var audio = document.getElementById("myAudio");
+  var source = document.getElementById("audioSource");
+  source.src = audioFile;
+  audio.load();
+  audio.play();
+  document.getElementById("mensagem").innerText = message;
+}
+</script>
+
+</body>
+</html>
